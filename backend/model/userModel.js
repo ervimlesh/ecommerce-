@@ -1,0 +1,21 @@
+// models/userModel.js
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
+  email: {
+    type: String,
+    unique: true,
+  },
+  password: {
+    type: String,
+  },
+  role: {
+    type: Number,
+    default: 0, // 0 = User, 1 = Admin, 2 = Super Admin
+  },
+});
+
+export default mongoose.model("User", userSchema); // ✅ Correct ref name

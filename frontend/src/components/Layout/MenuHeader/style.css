@@ -1,0 +1,150 @@
+.menuHeader {
+    padding: 11px 33px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #cecece;
+    box-shadow: 0 2px 2px -2px #333;
+    position: relative;
+}
+
+/* Toggle button for mobile */
+.menu-toggle {
+  display: none;
+  padding: 10px;
+  text-align: right;
+}
+
+.menu-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Shared */
+.menuHeader ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuHeader li {
+  position: relative;
+}
+
+.menu-list,
+.desktop-menu {
+  display: none;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.desktop-menu > li > span,
+.desktop-menu > li > a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.desktop-menu > li:hover > ul {
+  /* display: block; */
+  display: flex;
+  position: absolute;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 10;
+  min-width: 200px;
+}
+
+.desktop-menu > li > ul {
+  display: none;
+}
+
+.desktop-menu > li > ul > li > a {
+  display: block;
+  padding: 8px 15px;
+  color: #555;
+  text-decoration: none;
+}
+
+.desktop-menu > li > ul > li > a:hover {
+  background: #f5f5f5;
+}
+
+/* Mobile Menu */
+.menu-list.open {
+  display: block;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.menu-list li {
+  padding: 8px 0;
+}
+
+.category-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+.category-parent>a{
+    text-decoration: none;
+    color: #333;
+}
+
+.category-parent.mobile {
+  border-bottom: 1px solid #eee;
+}
+
+.category-parent .icon {
+  margin-left: 10px;
+}
+
+.category-leaf {
+  padding-left: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+.category-leaf>a{
+   
+    text-decoration: none;
+    color: #424040;
+
+}
+
+/* Show/hide subcategories on mobile */
+.collapsed {
+  display: none;
+}
+
+.expanded {
+  display: block;
+  padding-left: 15px;
+}
+
+/* Responsive rules */
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}

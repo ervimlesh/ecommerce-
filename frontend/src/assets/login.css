@@ -1,0 +1,21 @@
+.img-fluid {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 36%;
+    }
+}
+.border {
+  
+    /* border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; */
+}
+/* @media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 858px;
+    }
+} */

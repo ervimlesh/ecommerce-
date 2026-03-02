@@ -1,0 +1,45 @@
+/* === Fix for Braintree DropIn === */
+.braintree-dropin-wrapper {
+  margin-top: 20px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* Make payment button full width */
+.bill-button {
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.bill-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .braintree-dropin-wrapper {
+    margin: 1rem 0;
+  }
+}
+/* ...................cart............................. */
+
+.dilivery{
+
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid red ;
+}
+
+
+
+
+
