@@ -1,0 +1,71 @@
+name: CI/CD Pipeline for ecom-dev and ecom-prod
+
+on:
+  pull_request:
+    branches:
+      - ecom-dev  # Trigger when PR is opened/merged into 'ecom-dev'
+  push:
+    branches:
+      - ecom-dev  # Trigger on push to 'ecom-dev'
+      - ecom-prod  # Trigger on push to 'ecom-prod' (after merge)
+
+jobs:
+  # CI job for ecom-dev
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/ecom-dev'  # Only run this on 'ecom-dev' branch
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify your node version here
+
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run Tests
+        run: npm run test  # Ensure tests pass
+
+      - name: Deploy to Dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          echo "Deploying to AWS EC2 (Dev)"
+          # Example deploy script to Dev server (SSH or other)
+          # e.g., SSH into EC2, pull the latest code, restart the app
+          
+  # CD job for ecom-prod (will run when code is pushed to ecom-prod)
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/ecom-prod'  # Only run this on 'ecom-prod' branch
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify your node version here
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run test  # Optional: Run any tests for production
+
+      - name: Deploy to Production
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          echo "Deploying to AWS EC2 (Prod)"
+          # Example deploy script to Prod server (SSH or other)
+          # e.g., SSH into EC2, pull the latest code, restart the app
