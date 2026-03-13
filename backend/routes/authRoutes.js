@@ -9,7 +9,8 @@ import {
   getAllOrdersController,
   getOrdersController,
   sendInvoiceController,
-  getOrderByIdController
+  getOrderByIdController,
+  forgotPasswordController,
 } from "../controllers/userController.js";
 import { isAdmin, isSuperAdmin, requireSignIn } from "../middleware/authMiddleware.js";
 
@@ -19,7 +20,7 @@ const router = express.Router();
 // Public routes
 router.post("/register", registerController);
 router.post("/login", loginController);
-
+router.post("/forgot-password", forgotPasswordController);
 // Protected Routes
 router.get("/user-auth", requireSignIn, (req, res) => {
   res.status(200).send({ ok: true });
@@ -46,7 +47,7 @@ router.put(
   "/order-status/:orderId",
   requireSignIn,
   isAdmin,
- orderStatusController
+  orderStatusController
 );
 
 // order- address

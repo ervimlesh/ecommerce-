@@ -321,21 +321,21 @@ const Category = (props) => {
           <AdminSidebar />
         </div>
 
-        <div className="container">
-          <div className="row">
+        <div className="container fk-admin-category-container">
+          <div className="row mb-4">
             <div className="col-12">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3>Category</h3>
-                <div className="actionBtnContainer">
-                  <span>Actions: </span>
-                  <button onClick={handleShow}>
-                    <IoIosAdd /> <span>Add</span>
+              <div className="fk-category-header">
+                <h3 className="fk-category-title">Category Management</h3>
+                <div className="fk-actionBtnContainer">
+                  <span className="fk-action-label">Actions: </span>
+                  <button className="fk-action-btn fk-btn-add" onClick={handleShow}>
+                    <IoIosAdd className="fk-btn-icon" /> <span className="d-none d-sm-inline">Add</span>
                   </button>
-                  <button onClick={deleteCategory}>
-                    <IoIosTrash /> <span>Delete</span>
+                  <button className="fk-action-btn fk-btn-delete" onClick={deleteCategory}>
+                    <IoIosTrash className="fk-btn-icon" /> <span className="d-none d-sm-inline">Delete</span>
                   </button>
-                  <button onClick={updateCategory}>
-                    <IoIosCloudUpload /> <span>Edit</span>
+                  <button className="fk-action-btn fk-btn-edit" onClick={updateCategory}>
+                    <IoIosCloudUpload className="fk-btn-icon" /> <span className="d-none d-sm-inline">Edit</span>
                   </button>
                 </div>
               </div>
@@ -343,20 +343,22 @@ const Category = (props) => {
           </div>
           <div className="row">
             <div className="col-12">
-              <CheckboxTree
-                nodes={renderCategories(category)}
-                checked={checked}
-                expanded={expanded}
-                onCheck={(checked) => setChecked(checked)}
-                onExpand={(expanded) => setExpanded(expanded)}
-                icons={{
-                  check: <IoIosCheckbox />,
-                  uncheck: <IoIosCheckboxOutline />,
-                  halfCheck: <IoIosCheckboxOutline />,
-                  expandClose: <IoIosArrowForward />,
-                  expandOpen: <IoIosArrowDown />,
-                }}
-              />
+              <div className="fk-category-tree-card">
+                <CheckboxTree
+                  nodes={renderCategories(category)}
+                  checked={checked}
+                  expanded={expanded}
+                  onCheck={(checked) => setChecked(checked)}
+                  onExpand={(expanded) => setExpanded(expanded)}
+                  icons={{
+                    check: <IoIosCheckbox />,
+                    uncheck: <IoIosCheckboxOutline />,
+                    halfCheck: <IoIosCheckboxOutline />,
+                    expandClose: <IoIosArrowForward />,
+                    expandOpen: <IoIosArrowDown />,
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

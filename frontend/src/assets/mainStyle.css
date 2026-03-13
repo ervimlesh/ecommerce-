@@ -238,75 +238,118 @@
 
 /* navbar end */
 /* second navbar  */
-/*  */
-
-
-.nav-ram {
-  background-color: #f3eded;
+/* Flipkart Category Navbar Start */
+.fk-category-wrapper {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
-.ram {
-  background-color: rgb(209 199 213 / 60%);
-
-  /* border: 2px solid red; */
+.fk-category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-@media screen and (max-width: 1040px) {
-  .home4 {
-    display: flex;
-    flex-wrap: wrap;
+.fk-category-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+.fk-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  min-width: 80px;
+  padding: 0 10px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.fk-category-item:hover {
+  text-decoration: none;
+  color: #2874f0;
+}
+
+.fk-category-item .fk-category-img-box {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.fk-category-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.fk-category-text {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.fk-category-icon {
+  font-size: 16px;
+}
+
+/* media queries */
+@media screen and (max-width: 1024px) {
+  .fk-category-container {
+    justify-content: flex-start;
+    gap: 15px;
   }
 }
 
-.home4 {
-  padding: 10px 22px;
+@media screen and (max-width: 768px) {
+  .fk-category-wrapper {
+    padding: 10px 0;
+    margin-bottom: 4px;
+  }
 
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-evenly;
-  margin: 10px auto;
+  .fk-category-container {
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .fk-category-item {
+    min-width: 65px;
+    padding: 0 5px;
+  }
+
+  .fk-category-item .fk-category-img-box {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 6px;
+  }
+
+  .fk-category-text {
+    font-size: 12px;
+  }
 }
 
-.home4>div {
-  max-width: 80px;
-  display: flex;
-  flex-direction: column;
-}
-
-.home4>div a {
-  margin-top: 6px;
-  margin-bottom: 14px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgb(58, 58, 58);
-  text-decoration: none;
-}
-
-.home4>div img {
-  max-width: 80px;
-  /* set desired width */
-  max-height: 40px;
-  /* set desired height */
-  object-fit: cover;
-  border-radius: 11px;
-  /* optional: for rounded corners */
-}
-
-.flight {}
-
-.home3 {
-  /* border: 2px solid rgb(117, 109, 109); */
-  position: relative;
-
-  width: 100%;
-
-  /* justify-content: center; */
-}
+/* Flipkart Category Navbar End */
 
 /* header end
-
+ 
  */
 
 /* new slider start   */
@@ -828,3 +871,144 @@ width: 100%;
 
 
 /* -----------------------------------------filterPage.css end------------------------------------------------- */
+
+/* -----------------------------------------Admin Category Page Flipkart Style start------------------------------------------------- */
+.fk-admin-category-container {
+  padding: 24px;
+  background-color: #f1f3f6;
+  /* Flipkart light background */
+  min-height: calc(100vh - 64px);
+  width: 100%;
+}
+
+.fk-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.fk-category-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #212121;
+  margin: 0;
+}
+
+.fk-actionBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fk-action-label {
+  font-size: 14px;
+  color: #878787;
+  font-weight: 500;
+}
+
+.fk-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fk-btn-icon {
+  font-size: 18px;
+}
+
+.fk-btn-add {
+  background-color: #2874f0;
+  color: #ffffff;
+}
+
+.fk-btn-add:hover {
+  background-color: #1a5ac5;
+}
+
+.fk-btn-delete {
+  background-color: #ff6161;
+  color: #ffffff;
+}
+
+.fk-btn-delete:hover {
+  background-color: #e04545;
+}
+
+.fk-btn-edit {
+  background-color: #fb641b;
+  color: #ffffff;
+}
+
+.fk-btn-edit:hover {
+  background-color: #db5010;
+}
+
+.fk-category-tree-card {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+  min-height: 400px;
+}
+
+/* Checkbox Tree Flipkart Customization */
+.fk-category-tree-card .react-checkbox-tree {
+  font-size: 16px;
+  color: #212121;
+}
+
+.fk-category-tree-card .rct-node-icon {
+  color: #2874f0;
+}
+
+.fk-category-tree-card .rct-icon {
+  color: #878787;
+}
+
+.fk-category-tree-card .rct-checkbox .rct-icon-check {
+  color: #2874f0;
+}
+
+.fk-category-tree-card .rct-checkbox .rct-icon-uncheck,
+.fk-category-tree-card .rct-checkbox .rct-icon-half-check {
+  color: #878787;
+}
+
+@media screen and (max-width: 768px) {
+  .fk-admin-category-container {
+    padding: 12px;
+  }
+
+  .fk-category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .fk-actionBtnContainer {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .fk-action-btn {
+    padding: 8px 12px;
+  }
+}
+
+/* -----------------------------------------Admin Category Page Flipkart Style end------------------------------------------------- */

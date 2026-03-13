@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
 
-  
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,16 +30,16 @@ const Login = () => {
     try {
       const res = await axios.post("/api/v1/auth/login", formData);
       console.log(res)
-      
+
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
-         setAuth({
+        setAuth({
           ...auth,
           user: res.data.user,
           token: res.data.token,
         });
         localStorage.setItem("auth", JSON.stringify(res.data));
-        // navigate(location.state || "/");
+        /// navigate(location.state || "/");
         navigate("/");
       } else {
         console.log("error code is working")
@@ -111,8 +111,18 @@ const Login = () => {
 
               <hr />
 
+              <div className="d-grid mb-3">
+                <button
+                  type="button"
+                  onClick={() => navigate("/forgot-password")} className="btn btn-outline-secondary"
+
+                >
+                  Forgot Password?
+                </button>
+              </div>
+
               <p className="text-center">
-               Don't have an account? <a href="/register">Sign in</a>
+                Don't have an account? <a href="/register">Sign in</a>
               </p>
             </form>
           </div>

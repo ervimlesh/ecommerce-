@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
   },
+  answer: {
+    type: String,
+    required: true,
+  },
   role: {
     type: Number,
     default: 0, // 0 = User, 1 = Admin, 2 = Super Admin
