@@ -68,12 +68,13 @@ function App() {
           <Route path="user" element={<UserDashboard />} />
           <Route path="user/orders" element={<UserOrder />} />
           <Route path="user/profile" element={<UserProfile />} />
-          <Route path="user/forgot-password" element={<ForgotPassword />} />
+
         </Route>
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
       </Routes>
     </>
   );

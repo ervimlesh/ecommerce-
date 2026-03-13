@@ -11,6 +11,7 @@ const Register = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    answer: "",
   });
 
   const navigate = useNavigate();
@@ -111,6 +112,20 @@ const Register = () => {
                   id="confirmPassword"
                   placeholder="Confirm password"
                   value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="answer" className="form-label">Answer (What is your favorite sport?)</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="answer"
+                  id="answer"
+                  placeholder="Your favorite sport"
+                  value={formData.answer}
                   onChange={handleChange}
                   required
                 />

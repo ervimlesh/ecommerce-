@@ -142,131 +142,151 @@ const Shipping = () => {
         </div>
       </nav>
 
-      <div className="container my-5">
-        <h3 className="text-center mb-4">Shipping & Payment</h3>
-        <div className="row g-4">
-          <div className="col-md-8">
-            <div className="card shadow-sm">
-              <div className="card-header fw-bold">Shipping Details</div>
-              <div className="card-body">
-                <form className="row g-3">
-                  <div className="col-md-6">
-                    <label className="form-label">First Name *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label">Last Name *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={lname}
-                      onChange={(e) => setLname(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-12">
-                    <label className="form-label">Email *</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      value={userEmail}
-                      onChange={(e) => setUserMail(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label">Country *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={country}
-                      onChange={(e) => setCountery(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label">State/Province *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={state}
-                      onChange={(e) => setState(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label">City *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label">Postal Code *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={pinCode}
-                      onChange={(e) => setPinCode(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="col-12">
-                    <label className="form-label">Phone Number *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={number}
-                      onChange={(e) => setNumber(e.target.value)}
-                      required
-                    />
-                  </div>
-                </form>
+      <div className="container-fluid py-4" style={{ backgroundColor: "#f1f3f6", minHeight: "80vh" }}>
+        <div className="container" style={{ maxWidth: "1200px" }}>
+          <h3 className="text-center mb-4" style={{ fontWeight: "500", color: "#212121" }}>Shipping & Payment</h3>
+          <div className="row g-4 d-flex flex-column-reverse flex-md-row">
+            <div className="col-md-8">
+              {/* Shipping Details Card */}
+              <div className="card border-0 mb-4" style={{ borderRadius: "2px", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.1)" }}>
+                <div className="card-header bg-white text-center fw-bold py-3" style={{ borderBottom: "1px solid #f0f0f0", fontSize: "16px", color: "#212121" }}>
+                  Shipping Details
+                </div>
+                <div className="card-body p-4 bg-white" style={{ borderRadius: "0 0 2px 2px" }}>
+                  <form className="row g-4">
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>First Name *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>Last Name *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={lname}
+                        onChange={(e) => setLname(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>Email *</label>
+                      <input
+                        type="email"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={userEmail}
+                        onChange={(e) => setUserMail(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>Country *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={country}
+                        onChange={(e) => setCountery(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>State/Province *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>City *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>Postal Code *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={pinCode}
+                        onChange={(e) => setPinCode(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6 col-12">
+                      <label className="form-label" style={{ fontSize: "14px", color: "#212121" }}>Phone Number *</label>
+                      <input
+                        type="text"
+                        className="form-control border-0 shadow-none px-3"
+                        style={{ backgroundColor: "#f1f3f6", borderRadius: "4px", padding: "12px 16px", outline: "none", height: "48px" }}
+                        value={number}
+                        onChange={(e) => setNumber(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              {/* Payment Card */}
+              <div className="card border-0" style={{ borderRadius: "2px", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.1)" }}>
+                <div className="card-header bg-white text-center fw-bold py-3" style={{ borderBottom: "1px solid #f0f0f0", fontSize: "16px", color: "#212121" }}>
+                  Payment
+                </div>
+                <div className="card-body p-4 text-center bg-white" style={{ borderRadius: "0 0 2px 2px" }}>
+                  {!auth?.token || !cart?.length ? (
+                    <p className="text-muted mb-0" style={{ fontSize: "14px" }}>
+                      Login and add products to cart to proceed.
+                    </p>
+                  ) : (
+                    <button
+                      className="btn w-100 fw-bold py-3 border-0 shadow-none"
+                      style={{ backgroundColor: "#fb641b", color: "#fff", borderRadius: "2px", fontSize: "16px", textTransform: "uppercase", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.2)" }}
+                      onClick={handleRazorpayPayment}
+                      disabled={loading}
+                    >
+                      {loading ? "Processing..." : `Pay ₹${totalPrice}`}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className="card shadow-sm mt-4 crd">
-              <div className="card-header fw-bold">Payment</div>
-              <div className="card-body">
-                {!auth?.token || !cart?.length ? (
-                  <p className="text-dark">
-                    Login and add products to cart to proceed.
-                  </p>
-                ) : (
-                  <div className="single">    <button
-
-                    className="btn btn-success
-                     w-100 mt-2"
-                    onClick={handleRazorpayPayment}
-                    disabled={loading}
-                  >
-                    {loading ? "Processing..." : `Pay ₹${totalPrice}`}
-                  </button></div>
-              
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <div className="card-header fw-bold">Order Summary</div>
-              <div className="card-body">
-                <p className="d-flex justify-content-between">
-                  <span>Total Items:</span> <span>{totalQuantity}</span>
-                </p>
-                <p className="d-flex justify-content-between fw-bold">
-                  <span>Total Price:</span> <span>₹{totalPrice}</span>
-                </p>
+            <div className="col-md-4">
+              {/* Order Summary Card */}
+              <div className="card border-0 sticky-md-top" style={{ borderRadius: "2px", boxShadow: "0 1px 2px 0 rgba(0,0,0,0.1)", top: "20px" }}>
+                <div className="card-header bg-white text-center fw-bold py-3" style={{ borderBottom: "1px solid #f0f0f0", fontSize: "16px", color: "#212121" }}>
+                  Order Summary
+                </div>
+                <div className="card-body p-4 bg-white" style={{ borderRadius: "0 0 2px 2px" }}>
+                  <div className="d-flex justify-content-between mb-3" style={{ fontSize: "14px", color: "#212121" }}>
+                    <span>Total Items:</span> <span>{totalQuantity}</span>
+                  </div>
+                  <div className="d-flex justify-content-between fw-bold pt-3" style={{ fontSize: "16px", color: "#212121", borderTop: "1px dashed #e0e0e0" }}>
+                    <span>Total Price:</span> <span>₹{totalPrice}</span>
+                  </div>
+                  <div className="mt-4 text-center">
+                     <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/payment-method_69e7ec.svg" alt="Payment Methods" className="img-fluid opacity-75" style={{ maxWidth: "200px" }} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
